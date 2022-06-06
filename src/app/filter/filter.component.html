@@ -1,0 +1,280 @@
+<div class="filter-page-container">
+    <div class="filter-tab-container">
+        <ul class="filter-tab-ul">
+            <li class="filter-tab-li " (click)="activeTab('tab_1')" [ngClass]="{'active-tab': activatedTab == 'tab_1'}">
+                <div class="filter-tab-button-cotnainer">
+                    <div class="filter-tab-button-left">
+                        <div class="tab-number-container">
+                            <h1 class="tab-number">1</h1>
+                        </div>
+                        <div>
+                            <p class="tab-choose-sub-title">Choose A</p>
+                            <p class="tab-choose-title">Diamond</p>
+                        </div>
+                    </div>
+                    <div class="image-thumbnail-container">
+                        <img src="assets/Images/diamond.jpg" class="diamond-thumbnail" alt="Diamond thumbnail" />
+                    </div>
+                    <div class="filter-tab-button-right">
+                        <div>
+                            <p class="tab-price-title">$7,140</p>
+                            <span class="tab-view-button">View</span>
+                            <span class="tab-button-saperator">|</span>
+                            <span class="tab-view-button">Delete</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="filter-tab-li " (click)="activeTab('tab_2')" [ngClass]="{'active-tab': activatedTab == 'tab_2'}">
+                <div class="filter-tab-button-cotnainer">
+                    <div class="filter-tab-button-left">
+                        <div class="tab-number-container">
+                            <h1 class="tab-number">2</h1>
+                        </div>
+                        <div>
+                            <p class="tab-choose-sub-title">Choose A</p>
+                            <p class="tab-choose-title">Setting</p>
+                        </div>
+                    </div>
+                    <div class="image-thumbnail-container">
+                        <img src="assets/Images/ring.jpg" class="diamond-thumbnail" alt="Diamond thumbnail" />
+                    </div>
+                    <div class="filter-tab-button-right">
+                        <div>
+                            <p class="tab-price-title">$1,700</p>
+                            <span class="tab-view-button">View</span>
+                            <span class="tab-button-saperator">|</span>
+                            <span class="tab-view-button">Delete</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="filter-tab-li " (click)="activeTab('tab_3')" [ngClass]="{'active-tab': activatedTab == 'tab_3'}">
+                <div class="filter-tab-button-cotnainer">
+                    <div class="filter-tab-button-left">
+                        <div class="tab-number-container">
+                            <h1 class="tab-number">3</h1>
+                        </div>
+                        <div>
+                            <p class="tab-choose-sub-title">Review</p>
+                            <p class="tab-choose-title">Complete Ring</p>
+                        </div>
+                    </div>
+                    <div class="filter-tab-button-right" style="margin-right: 10px;">
+                        <div>
+                            <p class="tab-price-title">$1200</p>
+                            <span class="tab-view-button">View</span>
+                            <span class="tab-button-saperator">|</span>
+                            <span class="tab-view-button">Delete</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="filter-setting-button-cotnainer">
+        <CustomIconButton source="assets/Icons/solitaire.svg" class="setting-icon-button" title="solitaire"
+            (onPress)="applyFilter(1)" [selected]="selectedFilter == 1"></CustomIconButton>
+        <CustomIconButton source="assets/Icons/pave.svg" class="setting-icon-button" title="Pave"
+            (onPress)="applyFilter(2)" [selected]="selectedFilter == 2"></CustomIconButton>
+        <CustomIconButton source="assets/Icons/halo.svg" class="setting-icon-button" title="Halo"
+            (onPress)="applyFilter(3)" [selected]="selectedFilter == 3"></CustomIconButton>
+        <CustomIconButton source="assets/Icons/double-halo.svg" class="setting-icon-button" title="Double Halo"
+            (onPress)="applyFilter(4)" [selected]="selectedFilter == 4"></CustomIconButton>
+        <CustomIconButton source="assets/Icons/3-stone.svg" class="setting-icon-button" title="3 Stone"
+            (onPress)="applyFilter(5)" [selected]="selectedFilter == 5"></CustomIconButton>
+        <CustomIconButton source="assets/Icons/channel-set.svg" class="setting-icon-button" title="Channel Set"
+            (onPress)="applyFilter(6)" [selected]="selectedFilter == 6"></CustomIconButton>
+    </div>
+    <div style="display: flex;justify-content: space-between;">
+        <div class="filter-setting-button-cotnainer">
+            <CustomIconButton source="assets/Icons/14S.svg" class="setting-icon-button color-filter-btn"
+                customClass="small-icon" title="14K White" (onPress)="applyColorFilter(1)"
+                [selected]="selectedColorFilter == 1"></CustomIconButton>
+            <CustomIconButton source="assets/Icons/18S.svg" class="setting-icon-button color-filter-btn"
+                customClass="small-icon" title="18K White" (onPress)="applyColorFilter(2)"
+                [selected]="selectedColorFilter == 2"></CustomIconButton>
+            <CustomIconButton source="assets/Icons/14G.svg" class="setting-icon-button color-filter-btn"
+                customClass="small-icon" title="14K Yellow" (onPress)="applyColorFilter(3)"
+                [selected]="selectedColorFilter == 3"></CustomIconButton>
+            <CustomIconButton source="assets/Icons/18G.svg" class="setting-icon-button color-filter-btn"
+                customClass="small-icon" title="18K Yellow" (onPress)="applyColorFilter(4)"
+                [selected]="selectedColorFilter == 4"></CustomIconButton>
+            <CustomIconButton source="assets/Icons/PT.svg" class="setting-icon-button color-filter-btn"
+                customClass="small-icon" title="Platinum" (onPress)="applyColorFilter(5)"
+                [selected]="selectedColorFilter == 5"></CustomIconButton>
+            <CustomIconButton source="assets/Icons/RO.svg" class="setting-icon-button color-filter-btn"
+                customClass="small-icon" title="Rose Gold" (onPress)="applyColorFilter(6)"
+                [selected]="selectedColorFilter == 6"></CustomIconButton>
+        </div>
+        <div class="price-filter-container">
+            <div class="price-filter-title">
+                <p class="price-title">Price</p>
+                <p class="price-sub-title">(Setting)</p>
+            </div>
+            <div class="price-filter-rangebar-container">
+                <div class="price-rangebar-cotnainer">
+                    <RangeSlider min="100" max="10000" [startValue]="startingPrice" [endValue]="endingPrice" step="10"
+                        (onInput)="changePrice($event)"></RangeSlider>
+                </div>
+                <div class="price-range-input-container">
+                    <input type="tel" [(ngModel)]="startingPrice" min="100" max="10000" step="0.01"
+                        class="price-input" />
+                    <input type="tel" [(ngModel)]="endingPrice" min="100" max="10000" step="0.01" class="price-input" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-main-container">
+        <h1 class="content-heading"> Side-Stone Engagement Rings <span class="bold">- All Viewable In 360° HD</span>
+        </h1>
+        <p class="content-description">
+            Side-stone engagement rings feature complementing diamonds or gemstones, which bring out the brilliance of
+            the center stone. Side stones can be any cut, either matching or contrasting with the main stone of the
+            engagement ring. Start by choosing the perfect side-stone ring setting and then set it with a loose diamond
+            or gemstone, all in stunning 360° HD.
+        </p>
+        <div class="d-flex justify-content-space-between align-item-center" style="margin-top: 50px;">
+            <span class="total-record-title">Showing 3 Results</span>
+            <div class="sort-filter-control-container d-flex">
+                <div class="d-flex align-item-center sort-control-container">
+                    <span class="sort-filter-title">Shiping Date By : </span>
+                    <mat-form-field class="no-margin">
+                        <mat-label>Any Date</mat-label>
+                        <mat-select class="no-margin">
+                            <mat-option value="any Date"> Any Date </mat-option>
+                            <mat-option value="Tuesday, June 23"> Tuesday, June 23 </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="d-flex align-item-center sort-control-container">
+                    <span class="sort-filter-title">Sort By : </span>
+                    <mat-form-field class="no-margin">
+                        <mat-label>Best Saler</mat-label>
+                        <mat-select class="no-margin">
+                            <mat-option value="Best Saler">Best Saler</mat-option>
+                            <mat-option value="Price: Low to High">Price: Low to High</mat-option>
+                            <mat-option value="Price: High to Low">Price: High to Low</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="image-data-container">
+            <div class="item-container">
+                <div class="item-image-container">
+                    <img src="assets/Images/ring1.jpg" class="item-image" />
+                </div>
+                <p class="item-description">Platinum Petite Pave Crown Diamond Engagement Ring</p>
+                <div class="d-flex justify-content-space-between" style="padding: 10px">
+                    <div class="star-rating-container">
+                        <img src="assets/Images/star.png" class="star-icon" />
+                        <span>4.8</span>
+                    </div>
+                    <div>
+                        <h1 class="item-price">$2280</h1>
+                        <span class="item-price-description">(Setting Price)</span>
+                    </div>
+                    <div class="d-flex align-item-center hidden">
+                        <img src="assets/Images/heart.webp" class="favourite-icon" />
+                    </div>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-image-container">
+                    <img src="assets/Images/ring1.jpg" class="item-image" />
+                </div>
+                <p class="item-description">Platinum Petite Pave Crown Diamond Engagement Ring</p>
+                <div class="d-flex justify-content-space-between" style="padding: 10px">
+                    <div class="star-rating-container">
+                        <img src="assets/Images/star.png" class="star-icon" />
+                        <span>4.8</span>
+                    </div>
+                    <div>
+                        <h1 class="item-price">$2280</h1>
+                        <span class="item-price-description">(Setting Price)</span>
+                    </div>
+                    <div class="d-flex align-item-center hidden">
+                        <img src="assets/Images/heart.webp" class="favourite-icon" />
+                    </div>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-image-container">
+                    <img src="assets/Images/ring1.jpg" class="item-image" />
+                </div>
+                <p class="item-description">Platinum Petite Pave Crown Diamond Engagement Ring</p>
+                <div class="d-flex justify-content-space-between" style="padding: 10px">
+                    <div class="star-rating-container">
+                        <img src="assets/Images/star.png" class="star-icon" />
+                        <span>4.8</span>
+                    </div>
+                    <div>
+                        <h1 class="item-price">$2280</h1>
+                        <span class="item-price-description">(Setting Price)</span>
+                    </div>
+                    <div class="d-flex align-item-center hidden">
+                        <img src="assets/Images/heart.webp" class="favourite-icon" />
+                    </div>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-image-container">
+                    <img src="assets/Images/ring1.jpg" class="item-image" />
+                </div>
+                <p class="item-description">Platinum Petite Pave Crown Diamond Engagement Ring</p>
+                <div class="d-flex justify-content-space-between" style="padding: 10px">
+                    <div class="star-rating-container">
+                        <img src="assets/Images/star.png" class="star-icon" />
+                        <span>4.8</span>
+                    </div>
+                    <div>
+                        <h1 class="item-price">$2280</h1>
+                        <span class="item-price-description">(Setting Price)</span>
+                    </div>
+                    <div class="d-flex align-item-center hidden">
+                        <img src="assets/Images/heart.webp" class="favourite-icon" />
+                    </div>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-image-container">
+                    <img src="assets/Images/ring1.jpg" class="item-image" />
+                </div>
+                <p class="item-description">Platinum Petite Pave Crown Diamond Engagement Ring</p>
+                <div class="d-flex justify-content-space-between" style="padding: 10px">
+                    <div class="star-rating-container">
+                        <img src="assets/Images/star.png" class="star-icon" />
+                        <span>4.8</span>
+                    </div>
+                    <div>
+                        <h1 class="item-price">$2280</h1>
+                        <span class="item-price-description">(Setting Price)</span>
+                    </div>
+                    <div class="d-flex align-item-center hidden">
+                        <img src="assets/Images/heart.webp" class="favourite-icon" />
+                    </div>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-image-container">
+                    <img src="assets/Images/ring1.jpg" class="item-image" />
+                </div>
+                <p class="item-description">Platinum Petite Pave Crown Diamond Engagement Ring</p>
+                <div class="d-flex justify-content-space-between" style="padding: 10px">
+                    <div class="star-rating-container">
+                        <img src="assets/Images/star.png" class="star-icon" />
+                        <span>4.8</span>
+                    </div>
+                    <div>
+                        <h1 class="item-price">$2280</h1>
+                        <span class="item-price-description">(Setting Price)</span>
+                    </div>
+                    <div class="d-flex align-item-center hidden">
+                        <img src="assets/Images/heart.webp" class="favourite-icon" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+.icon-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-container.activated,
+.icon-button-container:hover .icon-container {
+  border: 1px solid #ff8080;
+}
+
+.icon-container {
+  display: flex;
+  min-height: 75px;
+  width: 100%;
+  border: 1px solid transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 100px;
+}
+
+.icon-title {
+  font-size: 14px;
+  font-family: calibri;
+  margin: 5px;
+  user-select: none;
+  text-transform: uppercase;
+}

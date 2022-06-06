@@ -1,0 +1,6 @@
+<div class="icon-button-container" [ngClass]="customClass" (click)="clickButton()">
+    <div class="icon-container" [ngClass]="{'activated': selected}">
+        <img [src]='source' class="icon" />
+    </div>
+    <p class="icon-title">{{title}}</p>
+</div>

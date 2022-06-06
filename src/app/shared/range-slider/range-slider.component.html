@@ -1,0 +1,6 @@
+<section class="range-slider">
+    <input type="range" #leftRange [(ngModel)]="startValue" [value]="startValue" [max]="max" [min]="min" [step]="step"
+        (change)="changeInput(startValue, endValue)" (input)="changeInput(startValue, endValue, true)" />
+    <input type="range" #rightRange [(ngModel)]="endValue" [value]="endValue" [max]="max" [min]="min" [step]="step"
+        (change)="changeInput(startValue, endValue)" (input)="changeInput(startValue, endValue, true)" />
+</section>
